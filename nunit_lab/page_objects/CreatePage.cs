@@ -51,27 +51,81 @@ namespace nunit_lab.page_objects
         [FindsBy(How = How.XPath, Using = "//input[@class = \"btn btn-default\"]")]
         public IWebElement btnSend;
 
-
-        public ProductPage CreateProduct(string productname_to_set, string category_to_set
-            , string supplier_to_set, string unitprice_to_set, string QuantityPerUnit_to_set
-            , string UnitsInStock_to_set, string UnitsOnOrder_to_set, string ReorderLevel_to_set)
+        public  object FieldProductNameFill(string productname_to_set)
         {
             new Actions(driver)
+                .Click(productname)
                 .SendKeys(productname_to_set)
+                .Build()
+                .Perform();
+            return productname;
+        }
+
+        public void FieldCategoryIdFill(string category_to_set)
+        {
+            new Actions(driver)
                 .Click(categoryid)
                 .SendKeys(category_to_set)
+                .Build()
+                .Perform();
+            //return productname;
+        }
+
+        public void FieldSupplierIdFill(string supplier_to_set)
+        {
+            new Actions(driver)
                 .Click(supplierid)
                 .SendKeys(supplier_to_set)
-                .Click(unitPrice)
+                .Build()
+                .Perform();
+        }
+
+        public void FieldUnitPriceFill(string unitprice_to_set)
+        {
+            new Actions(driver)
+                .Click(supplierid)
                 .SendKeys(unitprice_to_set)
+                .Build()
+                .Perform();
+        }
+
+        public void FieldQuantityPerUnitFill(string QuantityPerUnit_to_set)
+        {
+            new Actions(driver)
                 .Click(QuantityPerUnit)
                 .SendKeys(QuantityPerUnit_to_set)
+                .Build()
+                .Perform();
+        }
+        public void FieldUnitsInStockFill(string UnitsInStock_to_set)
+        {
+            new Actions(driver)
                 .Click(UnitsInStock)
                 .SendKeys(UnitsInStock_to_set)
+                .Build()
+                .Perform();
+        }
+
+        public void FieldUnitsOnOrderFill(string UnitsOnOrder_to_set)
+        {
+            new Actions(driver)
                 .Click(UnitsOnOrder)
                 .SendKeys(UnitsOnOrder_to_set)
+                .Build()
+                .Perform();
+        }
+
+        public void FieldReorderLevelFill(string ReorderLevel_to_set)
+        {
+            new Actions(driver)
                 .Click(ReorderLevel)
                 .SendKeys(ReorderLevel_to_set)
+                .Build()
+                .Perform();
+        }
+        public ProductPage CreateProduct()
+        {
+            new Actions(driver)
                 .Click(btnSend)
                 .Build()
                 .Perform();

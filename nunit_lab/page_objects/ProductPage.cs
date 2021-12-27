@@ -24,7 +24,7 @@ namespace nunit_lab.page_objects
             PageFactory.InitElements(driver, this);
 
         }
-        [FindsBy(How = How.ClassName, Using = "btn btn-default")]
+        [FindsBy(How = How.XPath, Using = "//div[2]/a")]
         private IWebElement createnew;
 
         [FindsBy(How = How.XPath, Using = "//li[4]/a")]
